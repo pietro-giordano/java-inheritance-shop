@@ -2,7 +2,7 @@ package org.lessons.java.shop;
 
 import java.math.BigDecimal;
 
-public class Smartphone extends Product{
+public class Smartphone extends Product {
     // Fields
     private int IMEI;
     private int storage;
@@ -30,5 +30,18 @@ public class Smartphone extends Product{
 
     public void setStorage(int storage) {
         this.storage = storage;
+    }
+
+    // Methods
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "Product=" + getCodeName() +
+                "IMEI=" + IMEI +
+                
+                "IMEI=" + IMEI +
+                ", storage=" + storage +
+                '}';
     }
 }

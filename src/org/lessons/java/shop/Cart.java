@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Cart {
@@ -8,58 +9,66 @@ public class Cart {
 
         System.out.println("Salve! Questo è il tuo carrello. Quanti prodotti vuoi inserirci?");
         int n = scanner.nextInt();
+        Product[] cart = new Product[n];
 
         for (int i = 0; i < n; i++) {
             System.out.println(i + "> Che prodotto vuoi inserire?\n 1> Smartphone\n 2> TV \n 3> Headphone");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    Smartphone newSmartphone = new Smartphone();
                     System.out.println("Inserire nome:");
-                    newSmartphone.setName(scanner.nextLine());
+                    String nameSmartphone = scanner.nextLine();
                     System.out.println("Inserire descrizione:");
-                    newSmartphone.setDescription(scanner.nextLine());
+                    String descriptionSmartphone = scanner.nextLine();
                     System.out.println("Inserire prezzo:");
-                    newSmartphone.setPrice(scanner.nextBigDecimal());
+                    BigDecimal priceSmartphone = scanner.nextBigDecimal();
                     System.out.println("Inserire iva:");
-                    newSmartphone.setPrice(scanner.nextBigDecimal());
+                    BigDecimal ivaSmartphone = scanner.nextBigDecimal();
                     System.out.println("Inserire IMEI:");
-                    newSmartphone.setIMEI(scanner.nextInt());
+                    int IMEI = scanner.nextInt();
                     System.out.println("Inserire taglio memoria:");
-                    newSmartphone.setStorage(scanner.nextInt());
+                    int storage = scanner.nextInt();
+                    scanner.nextLine();
+                    Smartphone newSmartphone = new Smartphone(nameSmartphone, descriptionSmartphone, priceSmartphone, ivaSmartphone, IMEI, storage);
+                    cart[i] = newSmartphone;
                     break;
                 case 2:
-                    TV newTV = new TV();
                     System.out.println("Inserire nome:");
-                    newTV.setName(scanner.nextLine());
+                    String nameTv = scanner.nextLine();
                     System.out.println("Inserire descrizione:");
-                    newTV.setDescription(scanner.nextLine());
+                    String descriptionTv = scanner.nextLine();
                     System.out.println("Inserire prezzo:");
-                    newTV.setPrice(scanner.nextBigDecimal());
+                    BigDecimal priceTv = scanner.nextBigDecimal();
                     System.out.println("Inserire iva:");
-                    newTV.setPrice(scanner.nextBigDecimal());
-                    System.out.println("Inserire pollici:");
-                    newTV.setInch(scanner.nextInt());
-                    System.out.println("Tv Smart?:");
-                    newTV.setSmart(scanner.nextBoolean());
+                    BigDecimal ivaTv = scanner.nextBigDecimal();
+                    System.out.println("Inserire polliciaggio:");
+                    int inch = scanner.nextInt();
+                    System.out.println("Smart tv?");
+                    boolean smart = scanner.nextBoolean();
+                    scanner.nextLine();
+                    TV newTV = new TV(nameTv, descriptionTv, priceTv, ivaTv, inch, smart);
+                    cart[i] = newTV;
                     break;
                 case 3:
-                    Headphone newHeadphone = new Headphone();
                     System.out.println("Inserire nome:");
-                    newHeadphone.setName(scanner.nextLine());
+                    String nameHeadphone = scanner.nextLine();
                     System.out.println("Inserire descrizione:");
-                    newHeadphone.setDescription(scanner.nextLine());
+                    String descriptionHeadphone = scanner.nextLine();
                     System.out.println("Inserire prezzo:");
-                    newHeadphone.setPrice(scanner.nextBigDecimal());
+                    BigDecimal priceHeadphone = scanner.nextBigDecimal();
                     System.out.println("Inserire iva:");
-                    newHeadphone.setPrice(scanner.nextBigDecimal());
+                    BigDecimal ivaHeadphone = scanner.nextBigDecimal();
                     System.out.println("Inserire colore:");
-                    newHeadphone.setColor(scanner.nextLine());
-                    System.out.println("Wireless?:");
-                    newHeadphone.setWireless(scanner.nextBoolean());
+                    String color = scanner.nextLine();
+                    System.out.println("Wireless?");
+                    boolean wireless = scanner.nextBoolean();
+                    scanner.nextLine();
+                    Headphone newHeadphone = new Headphone(nameHeadphone, descriptionHeadphone, priceHeadphone, ivaHeadphone, color, wireless);
+                    cart[i] = newHeadphone;
                     break;
             }
         }
+
 
         scanner.close();
     }
