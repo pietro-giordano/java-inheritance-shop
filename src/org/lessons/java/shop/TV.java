@@ -38,7 +38,7 @@ public class TV extends Product {
     public String toString() {
         return "TV{" +
                 super.toString() +
-                ", inch=" + inch +
+                ", inch=" + inch + " pollici" +
                 ", smart=" + smart +
                 '}';
     }

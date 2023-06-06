@@ -39,7 +39,7 @@ public class Smartphone extends Product {
         return "Smartphone{" +
                 super.toString() +
                 ", IMEI=" + IMEI +
-                ", storage=" + storage +
+                ", storage=" + storage + " GB" +
                 '}';
     }
 }
