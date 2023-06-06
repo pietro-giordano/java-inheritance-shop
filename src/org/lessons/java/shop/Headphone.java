@@ -2,7 +2,7 @@ package org.lessons.java.shop;
 
 import java.math.BigDecimal;
 
-public class Headphone extends Product{
+public class Headphone extends Product {
     // Fields
     private String color;
     private boolean wireless;
@@ -30,5 +30,15 @@ public class Headphone extends Product{
 
     public void setWireless(boolean wireless) {
         this.wireless = wireless;
+    }
+
+    // Methods
+    @Override
+    public String toString() {
+        return "Headphone{" +
+                super.toString() +
+                ", color='" + color + '\'' +
+                ", wireless=" + wireless +
+                '}';
     }
 }

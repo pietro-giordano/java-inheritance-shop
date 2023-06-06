@@ -14,6 +14,7 @@ public class Cart {
         for (int i = 0; i < n; i++) {
             System.out.println(i + "> Che prodotto vuoi inserire?\n 1> Smartphone\n 2> TV \n 3> Headphone");
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     System.out.println("Inserire nome:");
@@ -43,8 +44,8 @@ public class Cart {
                     BigDecimal ivaTv = scanner.nextBigDecimal();
                     System.out.println("Inserire polliciaggio:");
                     int inch = scanner.nextInt();
-                    System.out.println("Smart tv?");
-                    boolean smart = scanner.nextBoolean();
+                    System.out.println("Smart tv? s/n");
+                    boolean smart = Boolean.parseBoolean(scanner.next());
                     scanner.nextLine();
                     TV newTV = new TV(nameTv, descriptionTv, priceTv, ivaTv, inch, smart);
                     cart[i] = newTV;
@@ -60,8 +61,8 @@ public class Cart {
                     BigDecimal ivaHeadphone = scanner.nextBigDecimal();
                     System.out.println("Inserire colore:");
                     String color = scanner.nextLine();
-                    System.out.println("Wireless?");
-                    boolean wireless = scanner.nextBoolean();
+                    System.out.println("Wireless? s/n");
+                    boolean wireless = Boolean.parseBoolean(scanner.next());
                     scanner.nextLine();
                     Headphone newHeadphone = new Headphone(nameHeadphone, descriptionHeadphone, priceHeadphone, ivaHeadphone, color, wireless);
                     cart[i] = newHeadphone;
@@ -69,6 +70,10 @@ public class Cart {
             }
         }
 
+        System.out.println("Riepilogo carrello:");
+        for (int i = 0; i < cart.length; i++) {
+            System.out.println(cart[i].toString());
+        }
 
         scanner.close();
     }

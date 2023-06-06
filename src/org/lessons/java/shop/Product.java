@@ -63,13 +63,23 @@ public class Product {
     }
 
     // Methods
+
+
+    @Override
+    public String toString() {
+        return ", product=" + getCodeName() +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", full price=" + getIvaPrice();
+    }
+
     public BigDecimal getIvaPrice() {
         return this.price.add(price.multiply(this.iva));
     }
 
     private int generateCode() {
         Random code = new Random();
-        return code.nextInt(89999999) + 10000000;
+        return code.nextInt(8999) + 1000;
     }
 }
 

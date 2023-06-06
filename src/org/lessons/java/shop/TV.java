@@ -2,7 +2,7 @@ package org.lessons.java.shop;
 
 import java.math.BigDecimal;
 
-public class TV extends Product{
+public class TV extends Product {
     // Fields
     private int inch;
     private boolean smart;
@@ -30,5 +30,16 @@ public class TV extends Product{
 
     public void setSmart(boolean smart) {
         this.smart = smart;
+    }
+
+    // Methods
+
+    @Override
+    public String toString() {
+        return "TV{" +
+                super.toString() +
+                ", inch=" + inch +
+                ", smart=" + smart +
+                '}';
     }
 }
