@@ -62,6 +62,11 @@ public class Product {
         return this.code + "-" + this.name;
     }
 
+    public BigDecimal getIvaPrice() {
+        return this.price.add(price.multiply(this.iva));
+    }
+
+
     // Methods
 
 
@@ -71,10 +76,6 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", full price=" + getIvaPrice();
-    }
-
-    public BigDecimal getIvaPrice() {
-        return this.price.add(price.multiply(this.iva));
     }
 
     private int generateCode() {

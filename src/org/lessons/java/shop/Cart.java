@@ -7,7 +7,9 @@ public class Cart {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Salve! Questo è il tuo carrello. Quanti prodotti vuoi inserirci?");
+        System.out.println("Salve! Questo è il tuo carrello. Hai la tessera fedeltà? s/n");
+        boolean fidelity = Boolean.parseBoolean(scanner.next());
+        System.out.println("Quanti prodotti vuoi inserirci?");
         int n = scanner.nextInt();
         Product[] cart = new Product[n];
 
@@ -67,6 +69,9 @@ public class Cart {
                     Headphone newHeadphone = new Headphone(nameHeadphone, descriptionHeadphone, priceHeadphone, ivaHeadphone, color, wireless);
                     cart[i] = newHeadphone;
                     break;
+                default:
+                    System.out.println("Scelta non valida. Riprova.");
+                    i--;
             }
         }
 
